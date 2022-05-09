@@ -139,15 +139,19 @@ public static double averageInMoth(int[][] array, int month){ // метод ра
    }
   
 public static int bestSerie(int[][] array, int month, int aim){
-        int countSerie = 0;
+        int maxSerie = 0;
+        int currentSerie = 0;
         for(int day=0; day<array.length; day++){
             if(array[day][month]>= aim){
-                countSerie++;
+                currentSerie++;
+                if(currentSerie > maxSerie){
+                    maxSerie = currentSerie;
                 }
-            else {
-                countSerie =0;
             }
-            }   return countSerie;
+            else {
+                currentSerie = 0;
+            }
+            }   return maxSerie;
 }
 }
 /*public static int countDays(int[][] array,int col){
