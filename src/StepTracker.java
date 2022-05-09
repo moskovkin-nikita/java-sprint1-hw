@@ -154,13 +154,5 @@ public static int bestSerie(int[][] array, int month, int aim){
             }   return maxSerie;
 }
 }
-/*public static int countDays(int[][] array,int col){
-        int daysCount = 0;
-        for(int row=0;row<array.length;row++){
-            daysCount++;
-        }        
-        return daysCount;
-}
 
-*/
 
