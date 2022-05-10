@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class StepTracker {
 
     static int[][] stepsCount = new int[30][12];
@@ -120,13 +118,6 @@ public static int bestSeries(int[][] array, int month, int aim){ // метод �
             }   return maxSeries;
 }
 
-public static void randomData(){
-        for(int day=0; day<stepsCount.length; day++){
-            for(int month=0; month<stepsCount[0].length; month++){
-                stepsCount[day][month] = new Random().nextInt(20000);
-            }
-        }
-    }
 
 
 }

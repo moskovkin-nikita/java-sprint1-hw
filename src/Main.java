@@ -8,7 +8,7 @@ public class Main {
         while (true) {
             printMenu();
             int userInput = inputInt();
-            if (userInput != 1 && userInput != 2 && userInput != 3 && userInput != 4 && userInput != 5) {
+            if (userInput != 1 && userInput != 2 && userInput != 3 && userInput != 4) {
                 errorInput(); // обработка разных случаев
             }
             if (userInput == 1) {
@@ -20,9 +20,6 @@ public class Main {
             } else if (userInput == 4) {
                 System.out.println("Работа приложения завершена."); // завершение работы приложения
                 break;
-            } else if (userInput == 5) {
-                StepTracker.randomData(); // метод заполнения произвольными данными массива
-
             }
         }
     }
