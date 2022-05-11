@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class StepTracker {
 
     static int[][] stepsCount = new int[30][12];
@@ -7,24 +9,24 @@ public class StepTracker {
     static int steps;
 public static void inputData(){
         while(true){
-            Main.monthEntry();
-            month = Main.inputInt();
+            monthEntry();
+            month = inputInt();
             if (month < 0 || month > 11){
-                Main.errorInput();
+                errorInput();
             }
             else{
                 while(true){
-                    Main.dayEntry();
-                    day = Main.inputInt();
+                    dayEntry();
+                    day = inputInt();
                     if (day < 1 || day > 30){
-                        Main.errorInput();
+                        errorInput();
                     }
                     else{
                         while(true){
-                            Main.stepsEntry();
-                            steps = Main.inputInt();
+                            stepsEntry();
+                            steps = inputInt();
                             if (steps < 0) {
-                                Main.errorInput();
+                                errorInput();
                             }
                             else {
                                 stepsCount[day-1][month] = steps;
@@ -37,11 +39,11 @@ public static void inputData(){
         }
     }
 public static void showStatistics(){
-        Main.monthEntry();
-        month = Main.inputInt();
+        monthEntry();
+        month = inputInt();
         while(true){
             if(month < 0 || month > 11){
-                Main.errorInput();
+                errorInput();
             }
             else {
                 infoPerDay(stepsCount, month);
@@ -60,9 +62,9 @@ public static void changeAim() { //метод изенения цели по к�
         System.out.println("Текущая цель шагов: "+ aim);
         System.out.println("Введите новую цель");
         while(true){
-            int newAim = Main.inputInt();
+            int newAim = inputInt();
             if(newAim < 0){
-                Main.errorInput();
+                errorInput();
             }
             else {
                 aim = newAim;
@@ -117,6 +119,23 @@ public static int bestSeries(int[][] array, int month, int aim){ // метод �
             }
             }   return maxSeries;
 }
+    public static void errorInput(){
+        System.out.println("Введено некорректное значение, повторите ввод.");
+    }
+    public static void monthEntry(){
+        System.out.println("Введите номер месяца (от нуля до 11)");
+    }
+    public static void dayEntry() {
+        System.out.println("Введите номер дня (от 1 до 30)");
+    }
+    public static void stepsEntry() {
+        System.out.println("Введите количество шагов, пройденных в этот день");
+    }
+    public static int inputInt(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
 
 
 
