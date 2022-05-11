@@ -8,9 +8,6 @@ public class Main {
         while (true) {
             printMenu();
             int userInput = inputInt();
-            if (userInput != 1 && userInput != 2 && userInput != 3 && userInput != 4) {
-                errorInput(); // обработка разных случаев
-            }
             if (userInput == 1) {
                 StepTracker.inputData(); // вызов метода ввода данных
             } else if (userInput == 2) {
@@ -20,6 +17,9 @@ public class Main {
             } else if (userInput == 4) {
                 System.out.println("Работа приложения завершена."); // завершение работы приложения
                 break;
+            }
+            else {
+                errorInput(); // обработка разных случаев
             }
         }
     }
@@ -38,18 +38,6 @@ public class Main {
     public static void errorInput(){
         System.out.println("Введено некорректное значение, повторите ввод.");
     }
-    public static void monthEntry(){
-            System.out.println("Введите номер месяца (от нуля до 11)");
-        }
-    public static void dayEntry() {
-            System.out.println("Введите номер дня (от 1 до 30)");
-        }
-    public static void stepsEntry() {
-        System.out.println("Введите количество шагов, пройденных в этот день");
     }
-
-
-
-}
 
     
